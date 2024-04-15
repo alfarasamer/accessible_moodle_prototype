@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurs: Prozedurale Sprachen - Testkurs | FHTW Moodle</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    
+    <link
+      rel="stylesheet"
+      href="https://ableplayer.github.io/ableplayer/build/ableplayer.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <a
+      href="#accordion"
+      class="skip-to-main-content-link"
+      onclick="skipToMainContent()"
+      >Zu Kursmodulen springen</a
+    >
+    <div>
+      <nav
+        class="navbar navbar-dark fh-bg-blue navbar-expand"
+        aria-label="Site-Navigation"
+      >
+        <button
+          class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <span class="sr-only">Website-Übersicht</span>
+        </button>
+
+        <a
+          href="https://moodle.technikum-wien.at/my/"
+          class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn white-focus"
+        >
+          <img
+            src="https://moodle.technikum-wien.at/pluginfile.php/1/core_admin/logocompact/300x300/1704362323/standard.png"
+            class="logo mr-1"
+            alt="FHTW Moodle"
+          />
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto" aria-label="Hauptmenu" role="menubar">
+            <li class="nav-item active primary-navigation">
+              <a
+                class="nav-link primary-navigation white-focus"
+                role="menuitem"
+                href="https://moodle.technikum-wien.at/?redirect=0"
+                >STARTSEITE</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link primary-navigation white-focus"
+                role="menuitem"
+                href="https://moodle.technikum-wien.at/my/"
+                >DASCHBOARD</a
+              >
+            </li>
+            <li class="nav-item dropdown primary-navigation">
+              <a
+                class="nav-link dropdown-toggle white-focus"
+                href="#"
+                id="navbarDropdown"
+                role="menuitem"
+                aria-label="Links"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >LINKS</a
+              >
+
+              <div class="dropdown-menu">
+                <a
+                  class="dropdown-item white-focus"
+                  href="https://moodle.technikum-wien.at/mod/forum/view.php?id=74"
+                  aria-labelledby="navbarDropdown"
+                  role="menuitem"
+                  >FHTW Moodle News</a
+                >
+              </div>
+            </li>
+            <ul
+              role="menu"
+              aria-label="Hilfe"
+              style="list-style: none; padding-left: 0px !important"
+            >
+              <li class="nav-item dropdown primary-navigation">
+                <a
+                  class="nav-link dropdown-toggle white-focus"
+                  href="#"
+                  id="navbarDropdownHelp"
+                  aria-hidden="true"
+                  data-toggle="dropdown"
+                  >HILFE</a
+                >
+                <div class="dropdown-menu" role="menuitem">
+                  <a
+                    class="dropdown-item"
+                    href="mailto:moodle@technikum-wien.at"
+                    >Ticket an Moodle Support</a
+                  >
+                  <!-- Add more dropdown items as needed -->
+                </div>
+              </li>
+              <!-- Add more nav items as needed -->
+            </ul>
+          </ul>
+          <div id="usernavigation" class="navbar-nav ml-auto">
+            <div class="navbar navbar-expand-lg navbar-light">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav mr-auto">
+                  <div role="button" class="nav-item" aria-label="Suche">
+                    <a
+                      class="nav-link white-focus"
+                      href="https://moodle.technikum-wien.at/"
+                      ><i class="bi bi-search"></i>
+                      <span class="sr-only">Suche</span></a
+                    >
+                  </div>
+                  <div
+                    role="button"
+                    class="nav-item nav-link white-focus"
+                    aria-label="Benachrichtigungen"
+                  >
+                    <i class="bi bi-bell"></i
+                      ><span class="sr-only">Benachrichtigungen</span>
+                  </div>
+                  <div role="button" class="nav-item nav-link white-focus" aria-label="Nachrichten">
+                    <i class="bi bi-chat"></i
+                      ><span class="sr-only">Nachrichten</span>
+                  </div>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center flex-column"
+      role="none"
+    >
+      <div class="col-10 mt-2 mb-2">
+        <nav
+          class="navbar navbar-expand-lg secondary-navigation border-bottom"
+          aria-label="Kursmenu"
+          role="menubar"
+        >
+          <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+            aria-hidden="true"
+          >
+            <ul class="navbar-nav mr-auto" role="none" aria-hidden="true">
+              <li class="nav-item active">
+                <a
+                  class="nav-link secondary-navigation"
+                  role="menuitem"
+                  href="https://moodle.technikum-wien.at/course/view.php?id=24957"
+                  >Kurs <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link secondary-navigation"
+                  role="menuitem"
+                  href="https://moodle.technikum-wien.at/course/edit.php?id=24957"
+                  >Einstellungen</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link secondary-navigation"
+                  role="menuitem"
+                  href="https://moodle.technikum-wien.at/user/index.php?id=24957"
+                  >Teilnehmer/innen</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link secondary-navigation"
+                  role="menuitem"
+                  href="https://moodle.technikum-wien.at/grade/report/index.php?id=24957"
+                  >Bewertungen</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link secondary-navigation"
+                  role="menuitem"
+                  href="https://moodle.technikum-wien.at/report/view.php?courseid=24957"
+                  >Berichte</a
+                >
+              </li>
+
+              <li class="nav-item dropdown" role="menu" aria-label="Mehr">
+                <a
+                  class="nav-link dropdown-toggle secondary-navigation"
+                  href="#"
+                  id="moremenu-dropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-label="none"
+                  >Mehr</a
+                >
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="moremenu-dropdown"
+                  role="none"
+                >
+                  <a
+                    class="dropdown-item"
+                    href="https://moodle.technikum-wien.at/question/edit.php?courseid=24957"
+                    role="menuitem"
+                    >Fragensammlung</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://moodle.technikum-wien.at/contentbank/index.php?contextid=2036514"
+                    role="menuitem"
+                    >Inhaltsspeicher</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://moodle.technikum-wien.at/filter/manage.php?contextid=2036514"
+                    role="menuitem"
+                    >Textfilter Einstellungen</a
+                  >
+                  <a
+                    class="dropdown-item downloadcenterlink"
+                    href="https://moodle.technikum-wien.at/local/downloadcenter/index.php?courseid=24957"
+                    role="menuitem"
+                    >Kursinhalte herunterladen</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://moodle.technikum-wien.at/admin/tool/brickfield/index.php?courseid=24957"
+                    role="menuitem"
+                    >Tools zur Barrierefreiheit</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://moodle.technikum-wien.at/admin/tool/recyclebin/index.php?contextid=2036514"
+                    role="menuitem"
+                    >Papierkorb</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://moodle.technikum-wien.at/local/macromucho/macromucho.php?courseid=24957"
+                    role="menuitem"
+                    >Massenanlage von Multiple-Choice Fragen</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="https://moodle.technikum-wien.at/backup/import.php?id=24957"
+                    role="menuitem"
+                    >Kurse wiederverwenden</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <section class="col-10 d-flex" aria-label="Informationen zum Kurs">
+        <div class="row mb-5">
+          <div class="col-12 course-header d-flex mt-3">
+            <i
+              class="bi bi-mortarboard-fill h1 mr-3"
+              style="color: #80b539"
+              aria-hidden="true"
+            ></i>
+            <h1>Prozedurale Sprachen - Testkurs</h1>
+          </div>
+          <div class="col-8 mt-2 pl-3">
+            <p aria-label="Allgemeine Informationen zum Kurs">
+              Hier finden Sie allgemeine Informationen zum Kurs und alle
+              wichtigen Lernunterlagen, Übungsmaterialien und
+              Selbstchecks/Tests. Erarbeiten Sie die Inhalte im
+              <i
+                class="bi bi-square-fill mr-1"
+                style="color: #00689e"
+                aria-hidden="true"
+                role="none"
+              ></i>
+              Eigenstudium anhand des Lernpfades selbstständig. In den
+              <i
+                class="bi bi-square-fill mr-1"
+                style="color: #80b539"
+                aria-hidden="true"
+                role="none"
+              ></i>
+              Präsenzphasen erhalten Sie Gelegenheit, offene Fragen zum
+              Lernstoff zu klären sowie Ihr Wissen anwendungsorientiert zu
+              festigen.
+              <i
+                class="bi bi-signpost-fill mr-1"
+                style="color: #00689e"
+                aria-hidden="true"
+                role="none"
+              ></i>
+              Lernpfade führen Sie durch Aktivitäten und helfen Ihnen, Aufgaben
+              strukturiert zu bearbeiten. Alle Informationen zu den
+              Prüfungsmodalitäten finden Sie rechts im grauen Kasten unter
+              <i
+                class="bi bi-reception-4 mt-1"
+                aria-hidden="true"
+                role="none"
+              ></i>
+              Leistungsbeurteilung und
+              <i
+                class="bi bi-mortarboard mr-1"
+                aria-hidden="true"
+                role="none"
+              ></i>
+              Beurteilungskriterien. Alle Abgaben erfolgen über diese Plattform.
+            </p>
+
+            <h2 style="color: #7ea022">Semesterübersicht</h2>
+            <div class="row">
+              <div>
+                <div class="scrollable-area" id="scrollableArea">
+                  <ul class="list-group" role="menu">
+                    <li
+                      role="menuitem"
+                      class="list-group-item d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <i
+                          class="bi bi-square-fill mr-1"
+                          style="color: #69737a"
+                          aria-hidden="true"
+                        ></i>
+                        <a
+                          href="#lVCommunication"
+                          class="hyperlink list-item-label"
+                          data-toggle="modal"
+                          data-target="#setDateModal"
+                          >LV-Kommunikation</a
+                        >
+                      </div>
+                      <a
+                        class="set-date-link hyperlink"
+                        data-toggle="modal"
+                        data-target="#setDateModal"
+                        href="#"
+                        >| 10.03.2024</a
+                      >
+                    </li>
+                    <li
+                      role="menuitem"
+                      class="list-group-item d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <i
+                          class="bi bi-square-fill mr-1"
+                          style="color: #00689e"
+                          aria-hidden="true"
+                        ></i>
+                        <a
+                          href="#einfuehrungInDieThematik"
+                          class="hyperlink list-item-label"
+                          data-toggle="modal"
+                          data-target="#setDateModal"
+                          >Einführung in die Thematik</a
+                        >
+                      </div>
+                      <a
+                        class="set-date-link hyperlink"
+                        data-toggle="modal"
+                        data-target="#setDateModal"
+                        href="#"
+                        >| 10.04.2024</a
+                      >
+                    </li>
+
+                    <li
+                      role="menuitem"
+                      class="list-group-item d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <i
+                          class="bi bi-square-fill mr-1"
+                          style="color: #69737a"
+                          aria-hidden="true"
+                        ></i>
+                        <a
+                          href="#gesammelteFreiwilligeUebungsbeispiele"
+                          class="hyperlink list-item-label"
+                          data-toggle="modal"
+                          data-target="#setDateModal"
+                          >Gesammelte freiwillige Übungsbeispiele</a
+                        >
+                      </div>
+                      <a
+                        class="set-date-link hyperlink"
+                        data-toggle="modal"
+                        data-target="#setDateModal"
+                        href="#"
+                        >| 10.05.2024</a
+                      >
+                    </li>
+                    <li
+                      role="menuitem"
+                      class="list-group-item d-flex justify-content-between align-items-center"
+                    >
+                      <div>
+                        <i
+                          class="bi bi-square-fill mr-1"
+                          style="color: #00689e"
+                          aria-hidden="true"
+                        ></i>
+                        <a
+                          href="#eigenstudiumFunktionsUndVoidPointer"
+                          class="hyperlink list-item-label"
+                          data-toggle="modal"
+                          data-target="#setDateModal"
+                          >Eigenstudium: Funktions- und void-Pointer</a
+                        >
+                      </div>
+                      <a
+                        class="set-date-link hyperlink"
+                        data-toggle="modal"
+                        data-target="#setDateModal"
+                        href="#"
+                        >| 10.06.2024</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="d-flex justify-content-center m-1">
+                  <button id="showAllLink" class="btn btn-light mt-2">
+                    Alle anzeigen
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-3">
+            <div
+              class="row mt-2 greybackground p-3"
+              aria-label="Kontakt zu Lektor"
+              role="region"
+            >
+              <div class="black-border-bottom d-flex justify-content-center">
+                <p class="h6 text-center">Verantwortlich</p>
+              </div>
+              <div class="mt-3">
+                <img
+                  alt="Lektor Foto"
+                  class="rounded-circle mr-1"
+                  style="width: 40px; height: 40px"
+                  src="https://moodle.technikum-wien.at/user/pix.php/6271/f2.jpg"
+                  alt="User Picture"
+                />
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+                <a class="hyperlink" href="mailto:nemec@technikum-wien.at">
+                  Iris Nemec
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="row mt-2 greybackground p-3"
+              aria-label="Informationen zur Lehrveranstaltung und Prüfungsmodalitäten"
+              role="region"
+            >
+              <div class="black-border-bottom d-flex justify-content-center">
+                <p class="h6 text-center">
+                  Lehrveranstaltungsinformationen, Prüfungsmodalitäten
+                </p>
+              </div>
+              <div class="mt-3 mb-3 black-border-bottom">
+                <div class="mb-2">
+                  <i class="bi bi-link-45deg" aria-hidden="true"></i>
+                  <a
+                    class="hyperlink"
+                    href="https://cis.technikum-wien.at/addons/moodle/cis/lvinfo.php?moodle_course_id=24957"
+                  >
+                    LV-Informationen (CIS): Lernergebnisse, Anwesenheit und mehr
+                  </a>
+                </div>
+
+                <div class="mb-2">
+                  <i class="bi bi-reception-4" aria-hidden="true"></i>
+                  <p
+                    class="hyperlink"
+                
+                  >
+                    Leistungsbeurteilung
+                </p>
+                </div>
+
+                <div class="mb-2">
+                  <i class="bi bi-mortarboard" aria-hidden="true"></i>
+                  <p
+               
+                  >
+                    Beurteilungskriterien
+                </p>
+                </div>
+              </div>
+              <div>
+                <i class="bi bi-link-45deg" aria-hidden="true"></i>
+
+                <a
+                  class="hyperlink"
+                  href="https://cis.technikum-wien.at/cms/dms.php?id=1371"
+                >
+                  Anrechnungen, Prüfungsordnung
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <main
+        class="col-10 accordion accordion-chevron"
+        id="accordion"
+        aria-label="Kursinhalte"
+        tabindex="-1"
+      >
+        <div class="col-12 d-flex flex-row-reverse">
+          <button class="btn btn-primary mb-3" id="openCloseAllButton">
+            Alles aufklappen
+          </button>
+        </div>
+        <div class="accordion-item" id="lVCommunication">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed header-com"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="false"
+              aria-controls="collapseOne"
+            >
+              <i class="bi bi-inboxes mr-3 h4" aria-hidden="true"></i
+              >LV-Kommunikation
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <div class="card mb-2">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="p-3 d-flex align-items-center justify-content-center"
+                    style="
+                      background-color: #f7634d;
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 5px;
+                    "
+                  >
+                    <i
+                      class="bi bi-chat-right-text h4"
+                      style="color: white"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <div class="ml-3">
+                    <a
+                      href="https://moodle.technikum-wien.at/mod/forum/view.php?id=1500493"
+                      class="hyperlink"
+                    >
+                      <span>Ankündigungen Lehrende</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="p-3 d-flex align-items-center justify-content-center"
+                    style="
+                      background-color: #f7634d;
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 5px;
+                    "
+                  >
+                    <i
+                      class="bi bi-chat-right-text h4"
+                      style="color: white"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <div class="ml-3">
+                    <a
+                      href="https://moodle.technikum-wien.at/mod/forum/view.php?id=1500494"
+                      class="hyperlink"
+                    >
+                      <span>Forum für Studierende</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2">
+                <div class="card-body">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="p-3 d-flex align-items-center justify-content-center"
+                      style="
+                        background-color: #f7634d;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5px;
+                      "
+                    >
+                      <i
+                        class="bi bi-question-square h4"
+                        style="color: white"
+                        aria-hidden="true"
+                      ></i>
+                    </div>
+                    <div class="ml-3">
+                      <a
+                        href="https://moodle.technikum-wien.at/mod/hotquestion/view.php?id=1500495"
+                        class="hyperlink"
+                      >
+                        <span>Sammlung: Fragen zur Lehrveranstaltung </span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="card text-bg-light border-light mt-2">
+                    <div class="card-text d-flex align-items-center">
+                      <p class="ml-3 mb-1 mt-1">
+                        <small
+                          >Haben Sie noch Fragen zur Lehrveranstaltung, z.B. zu
+                          Terminen oder Prüfungen, dann schreiben Sie diese in
+                          die Sammlung. In der ersten Präsenzphase können die
+                          offenen Fragen aufgegriffen und geklärt werden.</small
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" id="einfuehrungInDieThematik">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed header-book"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              <i class="bi bi-book mr-3 h4" aria-hidden="true"></i>Einführung in
+              die Thematik
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <p>
+                Hier erhalten Sie einen groben Überblick über die
+                Lehrveranstaltungsthemen sowie Informationen darüber, auf welche
+                Handlungsabläufe, Aufgaben oder Anwendungssituationen im
+                Berufsfeld oder Studium Sie das Gelernte anwenden können.
+              </p>
+
+              <h3 class="sub-label">Lernergebnisse</h3>
+              <p>Nach erfolgreichem Abschluss sind Sie in der Lage, ...</p>
+              <ul>
+                <li>die Ein-/Ausgabe-Funktionen in C (stdio.h) zu nutzen</li>
+                <li>bedingte Abfragen und Schleifen anzuwenden</li>
+                <li>
+                  Prozeduren anzulegen und Parameter mittels Call-by-value und
+                  Call-by-Pointer zu benutzen
+                </li>
+                <li>Pointer-Arithmetik anzuwenden</li>
+                <li>
+                  Datenstrukturen wie Arrays, Pointer und Structs zu benutzen
+                </li>
+                <li>
+                  einfache Datenstrukturen wie einfach verkettete Listen zu
+                  implementieren
+                </li>
+                <li>
+                  die Funktionsweise einfacher Sortieralgorithmen zu erklären
+                  und nachvollziehen.
+                </li>
+              </ul>
+              <h3 class="sub-label mt-3">Inhalte</h3>
+              <p>Teil 1: Programmﬂuss</p>
+              <ul>
+                <li>Grundlagen: I/O, Variablen</li>
+                <li>Kontrollstrukturen und Schleifen</li>
+                <li>Funktionen/Prozeduren</li>
+              </ul>
+              <p class="mt-5">Teil 2: Datenorganisation</p>
+              <ul>
+                <li>Einfache Datentypen</li>
+                <li>Pointer und Arrays</li>
+                <li>Structs</li>
+              </ul>
+              <p class="mt-5">Teil 3: Fortgeschrittene Kapitel</p>
+              <ul>
+                <li>Programm-Organisation</li>
+                <li>Sortier-Algorithmen, Verkettete Listen</li>
+                <li>Dynamischer Speicher</li>
+                <li>File I/O<br /></li>
+              </ul>
+
+              <h3 class="sub-label mt-3">Ablauf</h3>
+              <p>
+                Diese Lehrveranstaltung wird als Labor mit abwechselnden
+                Eigenstudiums- und Präsenzphasen abgehalten (siehe auch
+                Semesterübersicht).
+              </p>
+
+              <div class="card mb-3" style="width: 48rem; height: 3rem">
+                <div
+                  class="card-body d-flex align-items-center"
+                  style="
+                    background-color: #00689e;
+                    color: white;
+                    border-radius: 5px;
+                  "
+                >
+                  <i
+                    class="bi bi-mortarboard-fill h5 mr-3"
+                    style="color: white"
+                    aria-hidden="true"
+                    role="none"
+                  ></i>
+                  <p class="card-text">
+                    Aufgaben und Tätigkeiten im Eigenstudium
+                  </p>
+                </div>
+              </div>
+
+              <ul>
+                <li>Erarbeiten der Grundlagen für die folgende Präsenzphase</li>
+                <ul>
+                  <li>Folien für Übersicht</li>
+                  <li>
+                    Weiterführendes Textbuch für Details und weitere Beispiele
+                  </li>
+                  <li>
+                    Selbstchecks für schnelle praktische Anwendung und
+                    Selbstüberprüfung des Gelernten
+                  </li>
+                </ul>
+                <li>
+                  Umsetzung von Programmieraufgaben durch Anwenden des in
+                  vorherigen Präsenz- und Eigenstudiumsphasen erworbenen Wissens
+                </li>
+                <ul>
+                  <li>Freiwillige Übungsbeispiele (Bonuspunkte)</li>
+                  <li>Zwischentests</li>
+                </ul>
+              </ul>
+
+              <div class="card mb-3" style="width: 48rem; height: 3rem">
+                <div
+                  class="card-body d-flex align-items-center"
+                  style="
+                    background-color: #f7634d;
+                    color: black;
+                    border-radius: 5px;
+                  "
+                >
+                  <i
+                    class="bi bi-mortarboard-fill h5 mr-3"
+                    style="color: white"
+                    aria-hidden="true"
+                    role="none"
+                  ></i>
+                  <p class="card-text">
+                    Aufgaben und Tätigkeiten in der Präsenzphase
+                  </p>
+                </div>
+              </div>
+              <ul>
+                <li>Quizzes zur Überprüfung des erarbeiteten Wissens</li>
+                <li>Diskussion offener Fragen aus der Eigenstudiumsphase</li>
+                <li>Betreutes Arbeiten an umzusetzenden Programmieraufgaben</li>
+                <li>Code Reviews</li>
+              </ul>
+              <div class="d-flex align-items-center">
+                <i
+                  class="bi bi-pencil-fill h5 mr-2 mt-3"
+                  style="color: #f7634d"
+                ></i>
+                <h3 class="sub-label mt-3">
+                  Musterbeispiel des Abschlusstests
+                </h3>
+              </div>
+              <div class="card mb-3" style="width: 48rem; height: 3rem">
+                <div
+                  class="card-body d-flex align-items-center"
+                  style="
+                    background-color: #00689e;
+                    color: white;
+                    border-radius: 5px;
+                  "
+                >
+                  <i
+                    class="bi bi-mortarboard-fill h5 mr-3"
+                    style="color: white"
+                    aria-hidden="true"
+                    role="none"
+                  ></i>
+                  <p class="card-text">
+                    Hier finden Sie ein Beispiel das sich am Niveau des
+                    Abschlusstests orientiert und Ihnen die Möglichkeit gibt,
+                    sich besser auf die Prüfungssituation vorzubereiten.
+                  </p>
+                </div>
+              </div>
+              <div class="card mb-2" style="border: none">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="p-3 d-flex align-items-center justify-content-center"
+                    style="
+                      background-color: #eb66a2;
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 5px;
+                    "
+                  >
+                    <i class="bi bi-check2-square h4" style="color: white"></i>
+                  </div>
+                  <div class="ml-3">
+                    <a
+                      href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500500"
+                      class="hyperlink"
+                    >
+                      <span>Musterbeispiel - Abschlusstest </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <i
+                  class="bi bi-pencil-fill h5 mr-2 mt-3"
+                  style="color: #f7634d"
+                ></i>
+                <h3 class="sub-label mt-3">Anwendungen des Gelernten</h3>
+              </div>
+              <div class="card mb-3" style="width: 48rem; height: 3rem">
+                <div
+                  class="card-body d-flex align-items-center"
+                  style="
+                    background-color: #00689e;
+                    color: white;
+                    border-radius: 5px;
+                  "
+                >
+                  <i
+                    class="bi bi-mortarboard-fill h5 mr-3"
+                    style="color: white"
+                    aria-hidden="true"
+                    role="none"
+                  ></i>
+                  <p class="card-text">
+                    In diesem PDF-Dokument finden Sie die Aufgaben oder
+                    Anwendungssituationen im weiteren Studium, auf die Sie das
+                    Gelernte anwenden können.
+                  </p>
+                </div>
+              </div>
+              <div class="card mb-2" style="border: none">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="p-3 d-flex align-items-center justify-content-center"
+                    style="
+                      background-color: #399be2;
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 5px;
+                    "
+                  >
+                    <i class="bi bi-file-earmark h4" style="color: white"></i>
+                  </div>
+                  <div class="ml-3">
+                    <a
+                      href="https://moodle.technikum-wien.at/mod/resource/view.php?id=1500502"
+                      class="hyperlink"
+                    >
+                      <span>Anwendungen des Gelernten</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="sub-label mt-3">
+                Tipps & Tricks für eine erfolgreiche Absolvierung
+              </h3>
+
+              <ul>
+                <li>
+                  Das Erarbeiten der theoretischen Grundlagen ist so
+                  dimensioniert, dass Sie dafür nie länger als 1 - 2 Stunden
+                  benötigen. Nehmen Sie sich diese Zeit, damit Sie in der
+                  folgenden Präsenzphase an der Diskussion teilnehmen können.
+                  <br />
+                </li>
+                <li>
+                  Die Diskussion ist wichtig, um die Details und Fallstricke der
+                  jeweiligen Themen zu erörtern. Diese müssen Sie kennen, um
+                  Übungsbeispiele und Tests erfolgreich absolvieren zu können.
+                  <b id="yui_3_17_2_1_1705239535920_109"
+                    >Kommen Sie daher vorbereitet in die Präsenzphase und
+                    stellen Sie Fragen</b
+                  >! Jede von Ihnen gestellte Frage nützt nicht nur Ihnen,
+                  sondern Ihrer gesamten Gruppe!
+                  <br />
+                </li>
+                <li>
+                  Machen Sie so viele der freiwilligen Übungsbeispiele wie
+                  möglich! Einerseits können Sie dadurch wertvolle Bonuspunkte
+                  erlangen, andererseits ist das die perfekte Vorbereitung für
+                  die Zwischen- und Abschlusstests. Das gesammelte Theoriewissen
+                  ist eine wichtige Basis, die
+                  <b
+                    >praktische Erfahrung jedoch absolut notwendig für einen
+                    erfolgreichen Abschluss dieser Lehrveranstaltung</b
+                  >!
+                  <br />
+                </li>
+                <li>
+                  Diese Lehrveranstaltung bildet die Basis für viele folgende
+                  Lehrveranstaltungen. Investieren Sie in diese Basis, es wird
+                  sich in den folgenden Semestern lohnen - versprochen!
+                  <br />
+                </li>
+              </ul>
+
+              <div class="d-flex align-items-center">
+                <i class="bi bi-book h5 mr-2 mt-3" style="color: #f7634d"></i>
+                <h3 class="sub-label mt-3">Begleitmaterial für Eigenstudium</h3>
+              </div>
+              <p>
+                Jede Eigenstudiumsphase stellt Lernmaterial für das jeweils
+                behandelte Thema zur Verfügung. Zusätzlich liefert
+                untenstehendes Material weitere und vertiefende Informationen zu
+                allen behandelten Themen. Verweise in dieses Material finden Sie
+                auf den Folien, in den Videos oder als direkte Links.
+              </p>
+
+              <div style="border-bottom: 1px solid lightgray">
+                <div class="card mb-2" style="border: none">
+                  <div class="card-body d-flex align-items-center">
+                    <div
+                      class="p-3 d-flex align-items-center justify-content-center"
+                      style="
+                        background-color: #399be2;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5px;
+                      "
+                    >
+                      <i class="bi bi-globe2 h4" style="color: white"></i>
+                    </div>
+                    <div class="ml-3">
+                      <a
+                        href="https://moodle.technikum-wien.at/mod/url/view.php?id=1500505"
+                        class="hyperlink"
+                      >
+                        <span>e-Book: C als erste Programmiersprache</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-bottom: 1px solid lightgray">
+                <div class="card mb-2" style="border: none">
+                  <div class="card-body d-flex align-items-center">
+                    <div
+                      class="p-3 d-flex align-items-center justify-content-center"
+                      style="
+                        background-color: #399be2;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5px;
+                      "
+                    >
+                      <i class="bi bi-globe2 h4" style="color: white"></i>
+                    </div>
+                    <div class="ml-3">
+                      <a
+                        href="https://moodle.technikum-wien.at/mod/url/view.php?id=1500506"
+                        class="hyperlink"
+                      >
+                        <span>e-Book: C von A bis Z</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="border-bottom: 1px solid lightgray">
+                <div class="card mb-2" style="border: none">
+                  <div class="card-body d-flex align-items-center">
+                    <div
+                      class="p-3 d-flex align-items-center justify-content-center"
+                      style="
+                        background-color: #399be2;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5px;
+                      "
+                    >
+                      <i class="bi bi-file-earmark h4" style="color: white"></i>
+                    </div>
+                    <div class="ml-3">
+                      <a
+                        href="https://moodle.technikum-wien.at/mod/resource/view.php?id=1500507"
+                        class="hyperlink"
+                      >
+                        <span
+                          >Begleitskriptum zu den Videos: Computer Science 1
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="border-bottom: 1px solid lightgray">
+                <div class="card mb-2" style="border: none">
+                  <div class="card-body d-flex align-items-center">
+                    <div
+                      class="p-3 d-flex align-items-center justify-content-center"
+                      style="
+                        background-color: #399be2;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5px;
+                      "
+                    >
+                      <i class="bi bi-file-earmark h4" style="color: white"></i>
+                    </div>
+                    <div class="ml-3">
+                      <a
+                        href="https://moodle.technikum-wien.at/mod/resource/view.php?id=1500508"
+                        class="hyperlink"
+                      >
+                        <span>Semesterbeispiel</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="border-bottom: 1px solid lightgray">
+                <div class="card mb-2" style="border: none">
+                  <div class="card-body d-flex align-items-center">
+                    <div
+                      class="p-3 d-flex align-items-center justify-content-center"
+                      style="
+                        background-color: #399be2;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 5px;
+                      "
+                    >
+                      <i class="bi bi-globe2 h4" style="color: white"></i>
+                    </div>
+                    <div class="ml-3">
+                      <a
+                        href="https://moodle.technikum-wien.at/mod/url/view.php?id=1500510"
+                        class="hyperlink"
+                      >
+                        <span
+                          >Code Visualisierung mit C Tutor
+                          (pythontutor.com)</span
+                        >
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" id="gesammelteFreiwilligeUebungsbeispiele">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed header-com"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              <i class="bi bi-inboxes mr-3 h4" aria-hidden="true"></i>Gesammelte
+              freiwillige Übungsbeispiele
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <p>
+                Hier finden Sie eine Auflistung sämtlicher freiwilliger
+                Übungsbeispielen inklusive Abgabedeadlines für dieses Semester.
+                Die Übungsbeispiele werden auch in jenen Präsenzphasen verlinkt,
+                in denen sie vorgestellt werden.
+              </p>
+
+              <div class="col-8">
+                <table
+                  class="table table-sm table-striped"
+                  id="submissionDeadlinesAndExamplesTable"
+                  aria-describedby="tableCaption"
+                >
+                  <caption id="tableCaption">
+                    Übungsbeispieletabell inklusive Abgabedeadlines für dieses
+                    Semester
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        id="submissionDeadline"
+                        style="
+                          width: 100pt;
+                          background-color: #00689e;
+                          color: white;
+                        "
+                      >
+                        Abgabe bis
+                      </th>
+                      <th
+                        scope="col"
+                        id="examples"
+                        style="background-color: #00689e; color: white"
+                      >
+                        Beispiel
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td headers="submissionDeadline">DD-MM-YYYY</td>
+                      <td headers="examples">
+                        <div style="text-align: left">
+                          <ul>
+                            <li>
+                              <a
+                                href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500561"
+                                >UE01</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td headers="submissionDeadline">DD-MM-YYYY</td>
+                      <td headers="examples">
+                        <div style="text-align: left">
+                          <ul>
+                            <li>
+                              <a
+                                href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500572"
+                                >UE02</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500573"
+                                >UE03</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td headers="submissionDeadline">DD-MM-YYYY</td>
+                      <td headers="examples">
+                        <div style="text-align: left">
+                          <ul>
+                            <li>
+                              <a
+                                href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500602"
+                                >UE04</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500603"
+                                >UE05</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500604"
+                                >UE06</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="mb-2">
+                <i class="bi bi-reception-4" aria-hidden="true"></i>
+                <p
+                
+                >
+                  Leistungsbeurteilung für freiwillige Übungsbeispiele
+              </p>
+              </div>
+
+              <div class="d-flex align-items-center">
+                <i
+                  class="bi bi-pencil-fill h5 mr-2 mt-3"
+                  style="color: #f7634d"
+                ></i>
+                <h3 class="sub-label mt-3">Abgelaufene Übungsbeispiele</h3>
+              </div>
+              <p>
+                Hier stehen ausgewählte abgelaufene Übungsbeispiele zur
+                Verfügung. Sie können hierfür keine zusätzlichen Punkte
+                erhalten, diese Beispiele dienen Ihnen nur zur Übung, nach den
+                jeweiligen Abgabedeadlines.
+              </p>
+              <div class="card mb-2" style="border: none">
+                <div class="card-body d-flex align-items-center">
+                  <div
+                    class="p-3 d-flex align-items-center justify-content-center"
+                    style="
+                      background-color: #eb66a2;
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 5px;
+                    "
+                  >
+                    <i class="bi bi-check2-square h4" style="color: white"></i>
+                  </div>
+                  <div class="ml-3">
+                    <a
+                      href="https://moodle.technikum-wien.at/mod/quiz/view.php?id=1500514"
+                      class="hyperlink"
+                    >
+                      <span
+                        >Übungsbeispiele als Selbstchecks (nicht bewertet)</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item" id="eigenstudiumFunktionsUndVoidPointer">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed header-book"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              <i class="bi bi-book mr-3 h4" aria-hidden="true"></i>Eigenstudium:
+              Funktions- und void-Pointer
+            </button>
+          </h2>
+          <div
+            id="collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <p>
+                In dieser Eigenstudiumsphase lernen Sie Funktions- und
+                void-Pointer anzuwenden.
+              </p>
+
+              <div class="col-8 p-2" style="border: 3px solid #00689e">
+                <div class="d-flex">
+                  <i
+                    class="bi bi-signpost-fill mr-1"
+                    style="color: #00689e"
+                    aria-hidden="true"
+                    role="none"
+                  ></i>
+                  <h1 style="color: #00689e" role="h1">Lernpfad</h1>
+                </div>
+
+                <p>
+                  Bereiten Sie sich im Eigenstudium für die kommende
+                  Präsenzphase anhand dieses Lernpfades vor:
+                </p>
+                <ol>
+                  <li>
+                    <i
+                      class="bi bi-eye-fill"
+                      aria-hidden="true"
+                      role="none"
+                    ></i>
+                    Lesen Sie sich die Theorie zu Funktions- und void-pointern
+                    durch und schauen Sie sich das Video dazu an.
+                  </li>
+                  <li>
+                    <i class="bi bi-pencil" aria-hidden="true" role="none"></i
+                    >Lösen Sie die Übungsbeispiele UE13 und UE14 in CodeRunner.
+                  </li>
+                </ol>
+              </div>
+
+              <div class="d-flex mt-5">
+                <i
+                  class="bi bi-eye-fill mr-1"
+                  style="color: #00689e"
+                  aria-hidden="true"
+                  role="none"
+                ></i>
+                <h2 style="color: #00689e" role="h2">Theorie</h2>
+              </div>
+
+              <div>
+                <h3>Video: Funktionspointer</h3>
+                <h4>Hilfetext für den Videoplayer</h4>
+                <h5>Barrierefreie Funktionen im Videoplayer</h5>
+                <div
+                  id="video-container"
+                  class="able-wrapper able-skin-2020"
+                  style="width: 480px; height: auto"
+                >
+                  <video
+                    id="video1"
+                    preload="auto"
+                    poster="https://ableplayer.github.io/ableplayer/media/wwa.jpg"
+                    data-able-player=""
+                    data-skin="2020"
+                    tabindex="-1"
+                  >
+                    <source
+                      type="video/mp4"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa.mp4"
+                    />
+                    <source
+                      type="video/webm"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa.webm"
+                    />
+                    <track
+                      kind="captions"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa_captions_de.vtt"
+                      srclang="de"
+                      label="Deutsche"
+                    />
+                    <track
+                      kind="captions"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa_captions_en.vtt"
+                      srclang="en"
+                      label="English"
+                    />
+                    <track
+                      kind="descriptions"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa_description_de.vtt"
+                      srclang="de"
+                    />
+                    <track
+                      kind="descriptions"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa_description_en.vtt"
+                      srclang="en"
+                    />
+                    <track
+                      kind="chapters"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa_chapters_de.vtt"
+                      srclang="de"
+                    />
+                    <track
+                      kind="chapters"
+                      src="https://ableplayer.github.io/ableplayer/media/wwa_chapters_en.vtt"
+                      srclang="en"
+                    />
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ableplayer.github.io/ableplayer/build/ableplayer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+          var elementToRemove = document.querySelector('.able-offscreen');
+          if (elementToRemove) {
+              elementToRemove.parentNode.removeChild(elementToRemove);
+          }
+      });
+  </script>
+  <script>
+    window.addEventListener('load', function() {
+        var elementToRemoveTitle = document.querySelector('.able-button-handler-transcript');
+        if (elementToRemoveTitle) {
+            elementToRemoveTitle.removeAttribute('title');
+        }
+    });
+</script>
+<script>
+  window.addEventListener('load', function() {
+      var elementToRemoveTitle = document.querySelector('.able-button-handler-descriptions');
+      if (elementToRemoveTitle) {
+          elementToRemoveTitle.removeAttribute('title');
+      }
+  });
+</script>
+  </body>
+</html>
